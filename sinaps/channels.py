@@ -198,6 +198,37 @@ class Hodgkin_Huxley_Ca(Channel):
         h = 1
         """
         return 0, 1
+#
+##class HeavysideFreqCurrent(Channel):
+#    """Point channel with several Heaviside currents at a given frequency between a time period
+#
+#    """
+#    param_names = ('current','frequency','duration','t0','tf')
+#
+#    def __init__(self,current,frequency,t0,tf):
+#        """Point channel with Heaviside currents at a given frequency
+#            current [pA]
+#            frequency [Hz]
+#            duration [ms]
+#            t0 : start of the current [ms]
+#            tf : end of the current [ms]
+#        """
+#        self.params={'current': current,
+#                    'frequency': frequency,
+#                    'duration': duration,
+#                    't0' : t0,
+#                    'tf' : tf,
+#                    }
+#
+#    @staticmethod
+#    def _I(V,t,
+#           current,frequency,duration,t0,tf):
+#           deltatstim=10**3/frequency
+#           nstim=np.ceil((tf-t0)/deltatstim)
+#           I=0
+#           for i in range(nstim):
+#               I+= ((t <= (t0 +i*deltatstim+ duration)) & (t >= (t0 +i*deltatstim)) * current
+#        return I
 
 
 def custom(func,name="Custom channel"):
